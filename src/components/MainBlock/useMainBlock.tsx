@@ -19,7 +19,7 @@ export const useMainBlock = () => {
   const preparedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
   
   useEffect(() => {
-   navigator.geolocation.getCurrentPosition(({ coords }) => {
+    navigator.geolocation && navigator.geolocation.getCurrentPosition(({ coords }) => {
     fetch(`${BASE_API}?lat=${coords.latitude}&lng=${coords.longitude}&date=${preparedDate}`)
       .then(response => response.json())
       .then(({ results }) => {

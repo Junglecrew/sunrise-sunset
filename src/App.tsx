@@ -7,6 +7,7 @@ import './App.css'
 export const App = () => {
   return (
     <div>
+      Sunrise Sunset API
       <MainBlock />
     </div>
   )
