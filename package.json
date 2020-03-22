@@ -15,10 +15,6 @@
     "react-scripts": "3.4.0",
     "typescript": "^3.7.5"
   },
-  "devDependencies": {
-    "@babel/compat-data": "7.8.0",
-    "@babel/preset-env": "7.8.0"
-  },
   "resolutions": {
     "@babel/preset-env": "7.8.0"
   },
