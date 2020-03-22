@@ -26,12 +26,6 @@ const mockResponse = {
    "status":"OK"
 }
 
-test('renders APP with title', () => {
-  const { getByText } = render(<App />)
-  const AppTitle = getByText(/Sunrise Sunset API/)
-  expect(AppTitle).toBeInTheDocument()
-})
-
 test('renders Loader Component before data', () => {
   const { container } = render(<MainBlock />)
   expect(container).toMatchInlineSnapshot(`
