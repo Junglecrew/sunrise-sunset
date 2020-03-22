@@ -3,12 +3,12 @@ export const BASE_API = `https://api.sunrise-sunset.org/json`
 export const ControlVariants = [
   {
     title: 'days',
-    type: 'back',
+    type: 'backward',
     value: '7'
   },
   {
     title: 'day',
-    type: 'back',
+    type: 'backward',
     value: '1'
   },
   {

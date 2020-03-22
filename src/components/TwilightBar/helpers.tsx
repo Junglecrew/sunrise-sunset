@@ -1,4 +1,4 @@
-import { formatToLocale } from '../../helpers/formatLoLocale'
+import { formatToLocale } from '../../helpers/formatToLocale'
 import { defaultBarWidth } from '../../config'
 import { TAnimationStart } from './types'
 

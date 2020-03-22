@@ -5,7 +5,7 @@ import {
 } from 'react'
 
 import { BASE_API } from '../../config'
-import { formatToLocale } from '../../helpers/formatLoLocale'
+import { formatToLocale } from '../../helpers/formatToLocale'
 
 export const useMainBlock = () => {
   const [date, changeDate] = useState(new Date())
@@ -23,11 +23,12 @@ export const useMainBlock = () => {
     fetch(`${BASE_API}?lat=${coords.latitude}&lng=${coords.longitude}&date=${preparedDate}`)
       .then(response => response.json())
       .then(({ results }) => {
+        const dayLength = results.day_length.split(':')
         const formattedData = {
           ...results,
           sunrise: formatToLocale(results.sunrise),
           sunset: formatToLocale(results.sunset),
-          day_length: `${results.day_length.split(':')[0]}:${results.day_length.split(':')[1]}`
+          day_length: `${dayLength[0]}:${dayLength[1]}`
         }
         setWeatherData(formattedData)
       })

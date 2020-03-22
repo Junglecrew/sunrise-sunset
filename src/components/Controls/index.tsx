@@ -25,7 +25,7 @@ export const Controls = ({ changeDate }: TControls) => {
           title
         }) => (
           <button key={`${type}-${value}`} onClick={handleClick(value, type)}>
-            {type === 'back' ? preSymbols.MINUS : preSymbols.PLUS} {value} {title}
+            {type === 'backward' ? preSymbols.MINUS : preSymbols.PLUS} {value} {title}
           </button>
         ))}
       </ul>
