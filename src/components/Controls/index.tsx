@@ -2,18 +2,18 @@ import React from 'react'
 
 import { ControlVariants, preSymbols } from '../../config'
 
-import { getDaysForward, getDaysBackward} from './helpers'
+import { getDays} from './helpers'
 
 type TControls = {
-  changeDate: (value: Date) => void
+  changeDate: (value: number) => void,
 }
 
 export const Controls = ({ changeDate }: TControls): JSX.Element => {
-  const handleClick = (value: string, type: string) => () => {
+  const handleClick = (value: number, type: string) => () => {
     if (type === 'forward') {
-      return changeDate(getDaysForward(value))
-    } 
-    return changeDate(getDaysBackward(value))
+      return changeDate(getDays(value))
+    }
+    return changeDate(getDays(value) * (-1))
   }
 
   return (

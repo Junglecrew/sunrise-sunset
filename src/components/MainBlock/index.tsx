@@ -22,7 +22,7 @@ export const MainBlock = (): JSX.Element => {
           <Fragment>
             <Title formattedDate={formattedDate}/>
             <InfoBlock weatherData={weatherData} />
-            <Controls changeDate={changeDate}/>
+            <Controls changeDate={changeDate} />
             <TwilightBar 
               weatherData={weatherData} 
               barWidth={720}

@@ -8,15 +8,20 @@ import { BASE_API } from '../../config'
 import { formatToLocale } from '../../helpers/formatToLocale'
 
 type TUseMainBlock = {
-  changeDate: (value: Date) => void,
+  changeDate: (numberOfMinutesInDays: number) => void,
+  date: Date,
   formattedDate: string,
   weatherData: {},
   showData: boolean,
 }
 
 export const useMainBlock = (): TUseMainBlock => {
-  const [date, changeDate] = useState(new Date())
+  const [date, changeStateDate] = useState(new Date())
   const [weatherData, setWeatherData] = useState({})
+
+  const changeDate = (numberOfMinutesInDays: number) => (
+    changeStateDate(new Date(date.getTime() + numberOfMinutesInDays))
+  )
 
   const formattedDate = useMemo(
     () => `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`,
@@ -47,7 +52,9 @@ export const useMainBlock = (): TUseMainBlock => {
   }, [preparedDate])
 
   return {
+    //@ts-ignore
     changeDate,
+    date,
     formattedDate,
     weatherData,
     showData: Object.keys(weatherData).length !== 0

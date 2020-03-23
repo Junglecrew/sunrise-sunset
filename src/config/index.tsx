@@ -4,22 +4,22 @@ export const ControlVariants = [
   {
     title: 'days',
     type: 'backward',
-    value: '7'
+    value: 7
   },
   {
     title: 'day',
     type: 'backward',
-    value: '1'
+    value: 1
   },
   {
     title: 'day',
     type: 'forward',
-    value: '1'
+    value: 1
   },
   {
     title: 'days',
     type: 'forward',
-    value: '7'
+    value: 7
   },
 ]
 
