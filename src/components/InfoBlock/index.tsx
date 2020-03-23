@@ -6,7 +6,7 @@ type TInfoBlock = {
   weatherData: Record<string, string>
 }
 
-export const InfoBlock = ({ weatherData }: TInfoBlock) => {
+export const InfoBlock = ({ weatherData }: TInfoBlock): JSX.Element => {
   const preparedData = {
     Sunrise: weatherData.sunrise,
     Sunset: weatherData.sunset,

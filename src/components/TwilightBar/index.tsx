@@ -4,8 +4,11 @@ import { useTwilightBar } from './useTwilightBar'
 import { TTwilightBar } from './types'
 import { defaultBarWidth } from '../../config'
 
-export const TwilightBar = ({ weatherData, barWidth = defaultBarWidth }: TTwilightBar) => {
-
+export const TwilightBar = (
+  { weatherData, 
+    barWidth = defaultBarWidth 
+  }: TTwilightBar
+): JSX.Element => {
   const { style } = useTwilightBar(weatherData, barWidth)
 
   return (

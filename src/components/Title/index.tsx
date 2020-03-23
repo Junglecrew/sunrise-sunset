@@ -4,7 +4,7 @@ type TTitle = {
   formattedDate: string
 }
 
-export const Title = ({ formattedDate }: TTitle) => {
+export const Title = ({ formattedDate }: TTitle): JSX.Element => {
   return (
     <div className='title'>
       {formattedDate}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Loader = () => (
+export const Loader = (): JSX.Element => (
   <div className='loader-wrapper'>
     <div className="lds-ellipsis">
       <div></div>

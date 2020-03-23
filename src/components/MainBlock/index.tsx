@@ -7,7 +7,7 @@ import { TwilightBar } from '../TwilightBar'
 import { useMainBlock } from './useMainBlock'
 import { Loader } from '../Loader'
 
-export const MainBlock = () => {
+export const MainBlock = (): JSX.Element => {
   const { 
     changeDate,
     formattedDate,

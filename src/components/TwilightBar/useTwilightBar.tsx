@@ -6,7 +6,11 @@ import {
 
 import { prepareData, animationStart } from './helpers'
 
-export const useTwilightBar = (weatherData: any, barWidth: number) => {
+type TUseTwilightBar = {
+  style: Record<'width' | 'transition' | 'background', string>
+}
+
+export const useTwilightBar = (weatherData: any, barWidth: number): TUseTwilightBar => {
   const [newData, setNewData] = useState({
     start: 0,
     end: 0
@@ -22,14 +26,15 @@ export const useTwilightBar = (weatherData: any, barWidth: number) => {
 
   const prevState = usePreviousState(weatherData) || weatherData
 
-  // Меняется weatherData и обновляется градиент
+
+  // We change date and gradient also changes with animation
   useEffect(() => {
     const newData = prepareData(weatherData, barWidth)
     const oldData = prepareData(prevState, barWidth)
     const tickStart = (newData.start - oldData.start) / 20
     const tickEnd = (newData.end - oldData.end) / 20
 
-    animationStart({ 
+    animationStart({
       data: oldData, 
       action: setNewData,
       tickStart,

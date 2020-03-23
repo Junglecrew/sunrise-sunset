@@ -5,23 +5,23 @@ import { TAnimationStart } from './types'
 // Animation function
 export const animationStart = ({
   data,
-  i = 1,
+  step = 1,
   action,
   tickStart,
   tickEnd, 
 }: TAnimationStart): void => {
-  if (i === 20) {
+  if (step === 20) {
     return
   }
   setTimeout(() => action({ 
-    start: data.start + tickStart * i,
-    end: data.end + tickEnd * i }),
-    100 + 20 * i
+    start: data.start + tickStart * step,
+    end: data.end + tickEnd * step }),
+    100 + 20 * step
   )
 
   return animationStart({ 
     data, 
-    i: i + 1, 
+    step: step + 1, 
     action, 
     tickStart, 
     tickEnd 

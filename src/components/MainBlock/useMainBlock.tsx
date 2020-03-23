@@ -7,7 +7,14 @@ import {
 import { BASE_API } from '../../config'
 import { formatToLocale } from '../../helpers/formatToLocale'
 
-export const useMainBlock = () => {
+type TUseMainBlock = {
+  changeDate: (value: Date) => void,
+  formattedDate: string,
+  weatherData: {},
+  showData: boolean,
+}
+
+export const useMainBlock = (): TUseMainBlock => {
   const [date, changeDate] = useState(new Date())
   const [weatherData, setWeatherData] = useState({})
 
@@ -16,7 +23,10 @@ export const useMainBlock = () => {
     [date]
   )
 
-  const preparedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+  const preparedDate = useMemo(
+    () => `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`,
+    [date]
+  )
   
   useEffect(() => {
     navigator.geolocation && navigator.geolocation.getCurrentPosition(({ coords }) => {

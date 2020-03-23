@@ -10,7 +10,7 @@ export type TData = {
 
 export type TAnimationStart = {
   data: TData,
-  i?: number,
+  step?: number,
   action: (newData: TData) => void,
   tickStart: number,
   tickEnd: number,
